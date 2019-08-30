@@ -1,6 +1,8 @@
 CRISPR Screening (computational part)
 ================================
 
+This is a tutorial adapted from [Nature Protocol paper](https://www.nature.com/articles/nprot.2017.016).
+
 ## Install Packages
 
 We will use [pip](https://pypi.org/) to install three packages, **twobitreader** and **biopython**.
