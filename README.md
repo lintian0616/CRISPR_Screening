@@ -7,7 +7,15 @@ This is a tutorial adapted from [Nature Protocol paper](https://www.nature.com/a
 
 We will use [pip](https://pypi.org/) to install three packages, **twobitreader** and **biopython**.
 
-First, upgrade `pip` to the latest version.
+If `pip` is not installed, we will update packages and install `pip` first.
+
+```
+sudo apt update
+sudo apt install python-pip
+pip --version
+```
+
+If `pip` is installed, upgrade `pip` to the latest version.
 
 ```
 sudo pip install --upgrade pip
@@ -23,7 +31,7 @@ sudo pip install biopython
 We also need to install [dryscrape](https://dryscrape.readthedocs.io/en/latest/) package.
 
 ```
-sudo apt-get install qt5-default libqt5webkit5-dev build-essential python-lxml python-pip xvfb
+sudo apt-get install qt5-default libqt5webkit5-dev build-essential python-lxml xvfb
 
 sudo pip install dryscrape
 ```
@@ -42,13 +50,19 @@ unzip seqmap-1.0.13-src.zip
 
 * Install **seqmap**
 
+Place seqmap in the same folder as the Python script `design_library.py`.
+
 ```
 cd seqmap-1.0.13-src/
 
 g++ -O3 -m64 -o seqmap match.cpp
 ```
 
-You should see the binary file `seqmap` in the folder. Place seqmap in the same folder as the Python script `design_library.py`.
+You should see the binary file `seqmap` in the folder, and copy `seqmap` to the `/bin`.
+
+```
+sudo cp seqmap /bin
+```
 
 * Prepare target gene list
 
