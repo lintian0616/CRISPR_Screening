@@ -86,3 +86,8 @@ Here is the example command:
 python design_library.py -o final_guides.csv -i hg38 -g target_genes.csv -gc 25 -s 20 -n 3 -gecko
 ```
 
+### a library an existing library
+
+* Prepare a `csv` file containing the names of the target genes, with each line corresponding to one gene.
+* Prepare another `csv` file for the annotated genome-scale library, with the names of each gene in the first column and the respective spacer sequences in the second column. Each line contains a different spacer sequence. The gene names in the target genes file should be in the same format as the names of the annotated library file.
+
