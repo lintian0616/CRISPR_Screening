@@ -58,10 +58,10 @@ cd seqmap-1.0.13-src/
 g++ -O3 -m64 -o seqmap match.cpp
 ```
 
-You should see the binary file `seqmap` in the folder, and copy `seqmap` to the `/bin`.
+We will add file `seqmap` to executable path in `.bashrc` file.
 
 ```
-sudo cp seqmap /bin
+export PATH=$PATH:/home/lintian0616/seqmap-1.0.13-src
 ```
 
 * Prepare target gene list

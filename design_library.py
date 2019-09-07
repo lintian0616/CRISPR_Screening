@@ -224,7 +224,7 @@ def find_offtargets(input_prefix):
 	
 		for k,f_in in tfs_group:
 			print "PROCESSING IN PARALLEL!!!"
-			cmd = "seqmap-1.0.13-src/seqmap {0} {1} {2} {3} /output_all_matches /do_not_output_probe_without_match".format(
+			cmd = "seqmap {0} {1} {2} {3} /output_all_matches /do_not_output_probe_without_match".format(
 				MAX_MISMATCHES, f_in.name, genome_fa_file, f_out.name)
 			processes.append(subprocess.Popen(cmd, shell=True))
 		for p in processes:
