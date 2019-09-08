@@ -86,6 +86,20 @@ Here is the example command:
 python design_library.py -o final_guides.csv -i hg38 -g target_genes.csv -gc 25 -s 20 -n 3 -gecko
 ```
 
+**1.** `-o`: Output **csv** file with names for target genes, spacer sequences, spacer orientations, chromosome locations, cleavage site locations, off-target scores, and oligo library sequences in columns from left to right (default: **final_guides.csv**)
+
+**2.** `-i`: Prefix of input genome 2-bit file (default: **hg19**)
+
+**3** `-g`: Target-gene **csv** file
+
+**4** `-gc`: Minimum GC content required for an sgRNA spacer sequence (default: **25**)
+
+**5** `-s`: Minimum spacing required between cleavage sites of sgRNAs targeting the same genomic region (default: **20**)
+
+**6** `-n`: Maximum number of guides selected targeting each gene in the target-gene **csv** file (default: **3**)
+
+**7** `-gecko`: add flanking sequences to the spacers for the oligo library synthesis
+
 ### a library an existing library
 
 * Prepare a `csv` file containing the names of the target genes, with each line corresponding to one gene.
