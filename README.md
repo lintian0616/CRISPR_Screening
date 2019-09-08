@@ -90,15 +90,15 @@ python design_library.py -o final_guides.csv -i hg38 -g target_genes.csv -gc 25 
 
 **2.** `-i`: Prefix of input genome 2-bit file (default: **hg19**)
 
-**3** `-g`: Target-gene **csv** file
+**3.** `-g`: Target-gene **csv** file
 
-**4** `-gc`: Minimum GC content required for an sgRNA spacer sequence (default: **25**)
+**4.** `-gc`: Minimum GC content required for an sgRNA spacer sequence (default: **25**)
 
-**5** `-s`: Minimum spacing required between cleavage sites of sgRNAs targeting the same genomic region (default: **20**)
+**5.** `-s`: Minimum spacing required between cleavage sites of sgRNAs targeting the same genomic region (default: **20**)
 
-**6** `-n`: Maximum number of guides selected targeting each gene in the target-gene **csv** file (default: **3**)
+**6.** `-n`: Maximum number of guides selected targeting each gene in the target-gene **csv** file (default: **3**)
 
-**7** `-gecko`: add flanking sequences to the spacers for the oligo library synthesis
+**7.** `-gecko`: add flanking sequences to the spacers for the oligo library synthesis
 
 ### a library an existing library
 
