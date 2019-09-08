@@ -103,5 +103,25 @@ python design_library.py -o final_guides.csv -i hg38 -g target_genes.csv -gc 25 
 ### a library an existing library
 
 * Prepare a `csv` file containing the names of the target genes, with each line corresponding to one gene.
+
 * Prepare another `csv` file for the annotated genome-scale library, with the names of each gene in the first column and the respective spacer sequences in the second column. Each line contains a different spacer sequence. The gene names in the target genes file should be in the same format as the names of the annotated library file.
 
+* run **design_targeted_library.py**
+
+Here is the example command:
+
+```
+python design_targeted_library.py -o selected_sgRNAs_from_library.csv -l sabatini_library_targets.csv -g target_genes_2.csv -gecko
+```
+
+**1.** `-o`: Output **csv** file with names for target genes, corresponding spacer sequences, and oligo library sequences in columns from left to right (default: **oligos.csv**)
+
+**2.** `-l`: Annotated library **csv** file with names in the first column and corresponding spacer sequences in the second column (default: **annotated_library.csv**)
+
+**3.** `-g`: Target-gene **csv** file
+
+**4.** `-gecko`: add flanking sequences to the spacers for the oligo library synthesis
+
+## amplified oligo structure
+
+![oligo structure](./Examples/oligo_structure.jpg)
