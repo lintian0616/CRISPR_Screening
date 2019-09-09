@@ -122,6 +122,51 @@ python design_targeted_library.py -o selected_sgRNAs_from_library.csv -l sabatin
 
 **4.** `-gecko`: add flanking sequences to the spacers for the oligo library synthesis
 
+## Available CRISPR Libraries
+
+* Genome-wise libraries
+[Doench](https://sites.google.com/broadinstitute.org/doench/home) lab and [Root](https://www.broadinstitute.org/bios/david-root) lab
+
+  CRISPR   |  Species  |   Link   |
+:-------:|:-------:|:-------:|
+ knockout |  Human | [Brunello](https://www.addgene.org/pooled-library/broadgpp-human-knockout-brunello/) |
+ activation | Human |  [Calabrese](https://www.addgene.org/pooled-library/broadgpp-human-crispra-calabrese-p65hsf/) |
+ inhibition | Human | [Dolcetto](https://www.addgene.org/pooled-library/broadgpp-human-crispri-dolcetto/) |
+  knockout | Mouse | [Brie](https://www.addgene.org/pooled-library/broadgpp-mouse-knockout-brie/) |
+ activation | Mouse |  [Caprano](https://www.addgene.org/pooled-library/broadgpp-mouse-crispra-caprano-p65hsf/) |
+ inhibition | Mouse | [Dolomiti](https://www.addgene.org/pooled-library/broadgpp-mouse-crispri-dolomiti/) |
+ 
+* Subpool libraries
+
+  CRISPR   |  Species  |  Lab  |   Link   |
+:-------:|:-------:|:-------:|:-------:|
+ knockout | Human | [Bassik](http://bassiklab.stanford.edu/index.html) | [link](https://www.addgene.org/pooled-library/bassik-human-crispr-knockout/) |
+ knockout | Human | [Sabatini](http://sabatinilab.wi.mit.edu/) | [link](https://www.addgene.org/pooled-library/sabatini-human-subpools/) |
+ activation| Human | [Weissman](https://weissmanlab.ucsf.edu/index.html) | [link](https://www.addgene.org/pooled-library/weissman-human-crispra-v2-subpools/) |
+ inhibition| Human | [Weissman](https://weissmanlab.ucsf.edu/index.html) | [link](https://www.addgene.org/pooled-library/weissman-human-crispri-v2-subpools/) |
+  knockout | Mouse | [Bassik](http://bassiklab.stanford.edu/index.html) | [link](https://www.addgene.org/pooled-library/bassik-mouse-crispr-knockout/) |
+  activation| Mouse | [Weissman](https://weissmanlab.ucsf.edu/index.html) | [link](https://www.addgene.org/pooled-library/weissman-mouse-crispra-v2-subpools/) |
+ inhibition| Mouse | [Weissman](https://weissmanlab.ucsf.edu/index.html) | [link](https://www.addgene.org/pooled-library/weissman-mouse-crispri-v2-subpools/)
+ 
+* Targeted Pathway libraries
+
+  CRISPR   |  Species  |  Usage  |   Link   |
+:-------:|:-------:|:-------:|:-------:|
+ knockout | Human | Kinome | [link](https://www.addgene.org/pooled-library/broadgpp-human-kinome/) |
+ knockout | Human | Ras Synthetic Lethal | [link](https://www.addgene.org/pooled-library/sabatini-crispr-human-synthetic-lethal-ras/) |
+  knockout | Human | Metabolism | [link](https://www.addgene.org/pooled-library/sabatini-human-crispr-metabolic-knockout/) |
+  knockout | Human | DNA Binding Domain of TFs | [link](https://www.addgene.org/pooled-library/vakoc-lab-human-dna-binding-domain-crispr-knockout/) |
+  knockout | Human | lncRNAs | [link](https://www.addgene.org/pooled-library/wei-human-crispr-lncrna-splicing/) |
+  knockout | Human | miRNAs | [link](https://www.addgene.org/pooled-library/lin-human-crispr-mirna/) |
+activation | Human | Membrane Protein | [link](https://www.addgene.org/pooled-library/wright-lab-human-membrane-protein-activation/) |
+inhibition | Human | lncRNA | [link](https://www.addgene.org/pooled-library/weissman-human-crispri-noncoding-subpools/) |
+ knockout | Mouse | Kinome | [link](https://www.addgene.org/pooled-library/broadgpp-mouse-kinome/) |
+ knockout | Mouse | mtDNA | [link](https://www.addgene.org/pooled-library/xie-mouse-crispr-carm/) |
+activation|  Mouse | mTFs | [link](https://www.addgene.org/pooled-library/qi-mouse-tf-activation/) |
+
+
+
+
 ## amplified oligo structure
 
 ![oligo structure](./Examples/oligo_structure.jpg)
