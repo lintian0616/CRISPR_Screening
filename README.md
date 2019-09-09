@@ -100,6 +100,8 @@ python design_library.py -o final_guides.csv -i hg38 -g target_genes.csv -gc 25 
 
 **7.** `-gecko`: add flanking sequences to the spacers for the oligo library synthesis
 
+When designing sgRNAs against large genomic regions (>50 kb), we recommend splitting the target-gene **csv** file into several files containing different subsets of the target genes to parallelize the library design process and minimize run time.  **It is estimated that the program will take 48 hours to complete.** The spacers that target the specified genomic coordinates will be written to an output **csv** file.
+
 ### a library an existing library
 
 * Prepare a `csv` file containing the names of the target genes, with each line corresponding to one gene.
