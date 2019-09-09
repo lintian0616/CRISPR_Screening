@@ -68,11 +68,11 @@ export PATH=$PATH:/home/lintian0616/seqmap-1.0.13-src
 
 Prepare Gene List below in a *csv* format. The **target_genes.csv** file should contain the headers **name**, **chrom**, **start**, and **end**.
 
-  name   |  chrom  |   start  |    end   |
-:-------:|:-------:|:--------:|:--------:|
-  *EGFR* |   chr7  | 55086525 | 55086725 |
- *LPAR5* |  chr12  |  6745297 |  6745497 |
- *GPR35* |   chr2  | 241544625| 241544825|
+|  name   |  chrom  |   start  |    end   |
+|:-------:|:-------:|:--------:|:--------:|
+|  *EGFR* |   chr7  | 55086525 | 55086725 |
+| *LPAR5* |  chr12  |  6745297 |  6745497 |
+| *GPR35* |   chr2  | 241544625| 241544825|
  
 * run **design_library.py**
 
@@ -127,14 +127,14 @@ python design_targeted_library.py -o selected_sgRNAs_from_library.csv -l sabatin
 * Genome-wise libraries
 [Doench](https://sites.google.com/broadinstitute.org/doench/home) lab and [Root](https://www.broadinstitute.org/bios/david-root) lab
 
-  CRISPR   |  Species  |   Link   |
-:-------:|:-------:|:-------:|
- knockout |  Human | [Brunello](https://www.addgene.org/pooled-library/broadgpp-human-knockout-brunello/) |
- activation | Human |  [Calabrese](https://www.addgene.org/pooled-library/broadgpp-human-crispra-calabrese-p65hsf/) |
- inhibition | Human | [Dolcetto](https://www.addgene.org/pooled-library/broadgpp-human-crispri-dolcetto/) |
-  knockout | Mouse | [Brie](https://www.addgene.org/pooled-library/broadgpp-mouse-knockout-brie/) |
- activation | Mouse |  [Caprano](https://www.addgene.org/pooled-library/broadgpp-mouse-crispra-caprano-p65hsf/) |
- inhibition | Mouse | [Dolomiti](https://www.addgene.org/pooled-library/broadgpp-mouse-crispri-dolomiti/) |
+|  CRISPR   |  Species  |   Link   |
+|:-------:|:-------:|:-------:|
+| knockout |  Human | [Brunello](https://www.addgene.org/pooled-library/broadgpp-human-knockout-brunello/) |
+| activation | Human |  [Calabrese](https://www.addgene.org/pooled-library/broadgpp-human-crispra-calabrese-p65hsf/) |
+| inhibition | Human | [Dolcetto](https://www.addgene.org/pooled-library/broadgpp-human-crispri-dolcetto/) |
+|  knockout | Mouse | [Brie](https://www.addgene.org/pooled-library/broadgpp-mouse-knockout-brie/) |
+| activation | Mouse |  [Caprano](https://www.addgene.org/pooled-library/broadgpp-mouse-crispra-caprano-p65hsf/) |
+| inhibition | Mouse | [Dolomiti](https://www.addgene.org/pooled-library/broadgpp-mouse-crispri-dolomiti/) |
  
 * Subpool libraries
 
