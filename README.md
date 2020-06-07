@@ -5,6 +5,8 @@ This is a tutorial adapted from [Nature Protocol paper](https://www.nature.com/a
 
 ## Install Packages
 
+### pip
+
 We will use [pip](https://pypi.org/) to install three packages, **twobitreader** and **biopython**.
 
 If `pip` is not installed, we will update packages and install `pip` first.
@@ -28,6 +30,17 @@ sudo pip install twobitreader
 sudo pip install biopython
 ```
 
+### bioconda
+
+The installation of [bioconda](https://bioconda.github.io/index.html) can be refered to **Bitbucket** -> **CommandLineTools** -> **Bioconda**.
+
+```
+conda install twobitreader
+conda install -c bioconda biopython
+```
+
+### Other packages
+
 We also need to install [dryscrape](https://dryscrape.readthedocs.io/en/latest/) package.
 
 ```
@@ -42,6 +55,15 @@ For [seqmap](http://www-personal.umich.edu/~jianghui/seqmap/), install the versi
 wget http://www-personal.umich.edu/~jianghui/seqmap/download/seqmap-1.0.13-src.zip
 
 unzip seqmap-1.0.13-src.zip
+
+## compile
+g++ -O3 -m64 -o seqmap match.cpp
+```
+
+We then add `seqmap` to the working directory.
+
+```
+export PATH=$PATH:/home/lintian0616/seqmap-1.0.13-src
 ```
 
 ## Generate Library
@@ -172,3 +194,12 @@ python design_targeted_library.py -o selected_sgRNAs_from_library.csv -l sabatin
 ## amplified oligo structure
 
 ![oligo structure](./Examples/oligo_structure.jpg)
+
+## Analyze sequencing data
+
+We will use [SRR9926542](https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR9926542) as example.
+
+```
+## Retrieve data
+fastq-dump -I --split-e SRR9926542
+```
