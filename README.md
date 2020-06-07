@@ -203,3 +203,9 @@ We will use [SRR9926542](https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR99265
 ## Retrieve data
 fastq-dump -I --split-e SRR9926542
 ```
+
+Download related spacer sequence file from [Addgene](https://www.addgene.org/pooled-library/broadgpp-mouse-knockout-gouda/).
+
+```
+python count_spacers.py -f ~/rstudio/SRR9926542.fastq -o output.csv -i SRR9926542.csv -no-g
+```
