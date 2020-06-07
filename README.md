@@ -30,17 +30,6 @@ sudo pip install twobitreader
 sudo pip install biopython
 ```
 
-### bioconda
-
-The installation of [bioconda](https://bioconda.github.io/index.html) can be refered to **Bitbucket** -> **CommandLineTools** -> **Bioconda**.
-
-```
-conda install twobitreader
-conda install -c bioconda biopython
-```
-
-### Other packages
-
 We also need to install [dryscrape](https://dryscrape.readthedocs.io/en/latest/) package.
 
 ```
@@ -48,6 +37,20 @@ sudo apt-get install qt5-default libqt5webkit5-dev build-essential python-lxml x
 
 sudo pip install dryscrape
 ```
+
+### install from source
+
+The source files can be found at directory of `source`.
+
+* [biopython](https://github.com/biopython/biopython/releases)
+
+```
+python setup.py build
+python setup.py test
+sudo python setup.py install
+```
+
+### Seqmap
 
 For [seqmap](http://www-personal.umich.edu/~jianghui/seqmap/), install the version **1.0.13** source code for all platforms and compile with the command.
 
@@ -69,22 +72,6 @@ export PATH=$PATH:/home/lintian0616/seqmap-1.0.13-src
 ## Generate Library
 
 ### a library targeting a custom set of genomic coordinates
-
-* Install **seqmap**
-
-Place seqmap in the same folder as the Python script `design_library.py`.
-
-```
-cd seqmap-1.0.13-src/
-
-g++ -O3 -m64 -o seqmap match.cpp
-```
-
-We will add file `seqmap` to executable path in `.bashrc` file.
-
-```
-export PATH=$PATH:/home/lintian0616/seqmap-1.0.13-src
-```
 
 * Prepare target gene list
 
