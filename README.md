@@ -3,6 +3,12 @@ CRISPR Screening (computational part)
 
 This is a tutorial adapted from [Nature Protocol paper](https://www.nature.com/articles/nprot.2017.016).
 
+# Content
+
+* Package Installation
+* Library Generation
+* Spacer Quantification
+
 ## Install Packages
 
 ### pip
@@ -178,13 +184,36 @@ python design_targeted_library.py -o selected_sgRNAs_from_library.csv -l sabatin
 
 
 
-## amplified oligo structure
+## spacer quantification
+
+Here is the structure of amplified spacer:
 
 ![oligo structure](./Examples/oligo_structure.jpg)
 
-## Analyze sequencing data
+Here are two examples:
 
-We will use [SRP063278](https://www.ncbi.nlm.nih.gov/sra?term=SRP063278) as example.
+* Human CRISPR Knockout Pooled Library [GeCKO v2](https://www.addgene.org/pooled-library/zhang-human-gecko-v2/)
+
+Let's download the fastq file:
+
+```
+wget https://media.addgene.org/cms/files/GeCKO-NatureMethods2014-fastq.zip
+unzip GeCKO-NatureMethods2014-fastq.zip
+mkdir GeCKO-NatureMethods2014
+mv *fq GeCKO-NatureMethods2014
+```
+
+The spacer (sgRNA) sequence file can also be downloaded, but we should remove other columns, and only keep **seq** column.
+
+```
+
+```
+
+* Human CRISPR Knockout Pooled Library [Brunello](https://www.addgene.org/pooled-library/broadgpp-human-knockout-brunello/)
+
+The related publications can be found [Doench et al Nat Biotechnol. 2016](https://www.nature.com/articles/nbt.3437) and [Sanson et al Nat Commun. 2018](https://www.nature.com/articles/s41467-018-07901-8).
+
+The library preparation sequence file can be found [PRJNA508200](https://www.ncbi.nlm.nih.gov/sra/PRJNA508200) -> **SRR8297997**.
 
 Let's first download [SRA Toolkit](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=software).
 
@@ -196,7 +225,7 @@ export PATH=$PATH:/home/lintian0616/sratoolkit.2.10.7-ubuntu64/bin
 
 ```
 ## Retrieve data
-fastq-dump -I --split-e SRR2243286
+fastq-dump -I --split-e SRR8297997
 ```
 
 Download related spacer sequence file from [Addgene](https://www.addgene.org/pooled-library/broadgpp-mouse-knockout-gouda/).

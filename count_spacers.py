@@ -7,8 +7,6 @@ import numpy as np
 import sys
 import argparse
 
-KEY_REGION_START = 30 #start index of key region
-KEY_REGION_END = 55 #end index of key region
 KEY = "CGAAACACC" #identifies sequence before guide to determine guide position
 
 def count_spacers(input_file, fastq_file, output_file, guide_g): 
@@ -49,10 +47,9 @@ def count_spacers(input_file, fastq_file, output_file, guide_g):
 	for record in readiter: #contains the seq and Qscore etc.
 		num_reads += 1
 		read_sequence = str.upper(str(record.seq))
-		key_region = read_sequence[KEY_REGION_START:KEY_REGION_END]
-		key_index = key_region.find(KEY)
+		key_index = read_sequence.find(KEY)
 		if key_index >= 0:
-			start_index = key_index + KEY_REGION_START + len(KEY)
+			start_index = key_index + len(KEY)
 			guide = read_sequence[start_index:(start_index + 20)]
 			if guide in dictionary:
 				dictionary[guide] += 1
