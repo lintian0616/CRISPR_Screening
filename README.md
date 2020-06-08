@@ -190,26 +190,7 @@ Here is the structure of amplified spacer:
 
 ![oligo structure](./Examples/oligo_structure.jpg)
 
-Here are two examples:
-
-* Human CRISPR Knockout Pooled Library [GeCKO v2](https://www.addgene.org/pooled-library/zhang-human-gecko-v2/)
-
-Let's download the fastq file:
-
-```
-wget https://media.addgene.org/cms/files/GeCKO-NatureMethods2014-fastq.zip
-unzip GeCKO-NatureMethods2014-fastq.zip
-mkdir GeCKO-NatureMethods2014
-mv *fq GeCKO-NatureMethods2014
-```
-
-The spacer (sgRNA) sequence file can also be downloaded, but we should remove other columns, and only keep **seq** column.
-
-```
-
-```
-
-* Human CRISPR Knockout Pooled Library [Brunello](https://www.addgene.org/pooled-library/broadgpp-human-knockout-brunello/)
+We will use [Human CRISPR Knockout Pooled Library Brunello](https://www.addgene.org/pooled-library/broadgpp-human-knockout-brunello/) as an example.
 
 The related publications can be found [Doench et al Nat Biotechnol. 2016](https://www.nature.com/articles/nbt.3437) and [Sanson et al Nat Commun. 2018](https://www.nature.com/articles/s41467-018-07901-8).
 
@@ -228,8 +209,42 @@ export PATH=$PATH:/home/lintian0616/sratoolkit.2.10.7-ubuntu64/bin
 fastq-dump -I --split-e SRR8297997
 ```
 
-Download related spacer sequence file from [Addgene](https://www.addgene.org/pooled-library/broadgpp-mouse-knockout-gouda/).
+Download spacer sequence file from [Addgene](https://www.addgene.org/pooled-library/broadgpp-human-knockout-brunello/). Only keep the column of spacer sequence. Also delete the column names so that the first row is already spacer sequence.
+
+Here is the parameters for `count_spacers.py`.
+
+* `-f`: .fastq file containing NGS data for analysis
+* `-o`: Output .csv file with guide spacer sequences in the first column and respective read counts in the second column
+* `-i`: Input .csv file with guide spacer sequences
+* `-no-g`: Indicates the absence of a guanine before the guide spacer sequence
+
+The priciple of `count_spacers.py` is to find seed `CGAAACACC`, which is at the 3' of the forward primer and is just left to the spacer sequence . The position of seed will be used to determine the position and extract the sequence of **20-nt** spacer.
+
+![oligo structure](./Examples/count_spacer_diagram.jpg)
 
 ```
-python count_spacers.py -f ~/rstudio/SRR2243286.fastq -o output.csv -i count_spacers_files/broadgpp-brie-library-contents-spacer.csv -no-g
+python count_spacers.py -f ~/rstudio/SRR8297997.fastq -o output.csv -i count_spacers_files/broadgpp-brunello-library-contents-human-spacer.csv
+```
+
+There are two outputs:
+
+* `output.csv` spacer read counts will be written to an output .csv file, which will be used to generate abundance plot.
+* `statistics.txt` includes the number of perfect guide matches, nonperfect guide matches, sequencing reads without key, number of reads processed, percentage of perfectly matching guides, percentage of undetected guides, and skew ratio will be written to statistics.txt. An ideal sgRNA library should have **>70%** perfectly matching guides, **<0.5%** undetected guides, and a skew ratio of less than **10**.
+
+To make the cumulative plots, use the code below in rstudio.
+
+```{r}
+output <- read.csv("output.csv", stringsAsFactors = FALSE)
+
+## reorder table
+output2 <- output[order(output$V2, decreasing = TRUE), ]
+output2[, 3] <- cumsum(output2[,2]/sum(output2[,2]))
+
+## Make plot and calculate AUC
+plot(x=1:nrow(output2), y=output2[,3], type = "l", col="#de2d26", xlab="sgRNAs ranked by abundance", ylab="Fraction of total represented")
+## Add another curve
+#lines(x=1:nrow(output2), y=output2[,3], col="green", lwd=0.5)
+
+## calculate AUC
+sum(output2[,3])/nrow(output2) ## the more close to 0.5, the better
 ```
