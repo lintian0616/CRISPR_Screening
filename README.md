@@ -184,15 +184,23 @@ python design_targeted_library.py -o selected_sgRNAs_from_library.csv -l sabatin
 
 ## Analyze sequencing data
 
-We will use [SRR9926542](https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR9926542) as example.
+We will use [SRP063278](https://www.ncbi.nlm.nih.gov/sra?term=SRP063278) as example.
+
+Let's first download [SRA Toolkit](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=software).
+
+```
+wget https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/2.10.7/sratoolkit.2.10.7-ubuntu64.tar.gz
+tar -zxvf sratoolkit.2.10.7-ubuntu64.tar.gz
+export PATH=$PATH:/home/lintian0616/sratoolkit.2.10.7-ubuntu64/bin
+```
 
 ```
 ## Retrieve data
-fastq-dump -I --split-e SRR9926542
+fastq-dump -I --split-e SRR2243286
 ```
 
 Download related spacer sequence file from [Addgene](https://www.addgene.org/pooled-library/broadgpp-mouse-knockout-gouda/).
 
 ```
-python count_spacers.py -f ~/rstudio/SRR9926542.fastq -o output.csv -i SRR9926542.csv -no-g
+python count_spacers.py -f ~/rstudio/SRR2243286.fastq -o output.csv -i count_spacers_files/broadgpp-brie-library-contents-spacer.csv -no-g
 ```
