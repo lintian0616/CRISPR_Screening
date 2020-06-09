@@ -51,8 +51,33 @@ The source files can be found at directory of `source`.
 * [biopython](https://github.com/biopython/biopython/releases)
 
 ```
+unzip biopython-biopython-176.zip
+cd biopython-biopython-176/
 python setup.py build
 python setup.py test
+sudo python setup.py install
+```
+
+* [twobitreader](https://pypi.org/project/twobitreader/)
+
+```
+tar -zxvf twobitreader-3.1.7.tar.gz
+cd twobitreader-3.1.7/
+sudo python setup.py install
+```
+
+* [dryscrape](https://dryscrape.readthedocs.io/en/latest/)
+
+```
+sudo apt-get install qt5-default libqt5webkit5-dev build-essential python-lxml xvfb
+
+## Install webkit-server-1.0
+tar -zxvf webkit-server-1.0.tar.gz
+cd webkit-server-1.0/
+sudo python setup.py install
+
+unzip dryscrape_v1.0.zip
+cd dryscrape-master
 sudo python setup.py install
 ```
 
@@ -61,6 +86,7 @@ sudo python setup.py install
 For [seqmap](http://www-personal.umich.edu/~jianghui/seqmap/), install the version **1.0.13** source code for all platforms and compile with the command.
 
 ```
+## Download (or use file in "source" folder)
 wget http://www-personal.umich.edu/~jianghui/seqmap/download/seqmap-1.0.13-src.zip
 
 unzip seqmap-1.0.13-src.zip
