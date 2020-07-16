@@ -13,7 +13,7 @@ This is a tutorial adapted from [Nature Protocol paper](https://www.nature.com/a
 
 ### pip
 
-We will use [pip](https://pypi.org/) to install three **twobitreader** and **biopython**.
+We will use [pip](https://pypi.org/) to install **twobitreader** and **biopython**.
 
 If `pip` is not installed, we will update packages and install `pip` first.
 
