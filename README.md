@@ -13,7 +13,7 @@ This is a tutorial adapted from [Nature Protocol paper](https://www.nature.com/a
 
 ### pip
 
-We will use [pip](https://pypi.org/) to install three packages, **twobitreader** and **biopython**.
+We will use [pip](https://pypi.org/) to install three **twobitreader** and **biopython**.
 
 If `pip` is not installed, we will update packages and install `pip` first.
 
@@ -44,7 +44,7 @@ sudo apt-get install qt5-default libqt5webkit5-dev build-essential python-lxml x
 sudo pip install dryscrape
 ```
 
-### install from source
+### install from source (Preferred)
 
 The source files can be found at directory of `source`.
 
@@ -90,6 +90,7 @@ For [seqmap](http://www-personal.umich.edu/~jianghui/seqmap/), install the versi
 wget http://www-personal.umich.edu/~jianghui/seqmap/download/seqmap-1.0.13-src.zip
 
 unzip seqmap-1.0.13-src.zip
+cd seqmap-1.0.13-src/
 
 ## compile
 g++ -O3 -m64 -o seqmap match.cpp
