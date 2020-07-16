@@ -54,7 +54,7 @@ The source files can be found at directory of `source`.
 unzip biopython-biopython-176.zip
 cd biopython-biopython-176/
 python setup.py build
-python setup.py test
+python setup.py test # takes ~ 2 hours
 sudo python setup.py install
 ```
 
