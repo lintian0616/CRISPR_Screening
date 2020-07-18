@@ -11,6 +11,8 @@ This is a tutorial adapted from [Nature Protocol paper](https://www.nature.com/a
 
 ## Install Packages
 
+First, initiate a new instance (e.g., **Ubuntu 18.04 GUI XFCE Base**) from CyVerse.
+
 ### pip and bioconda (preferred)
 
 We will use [pip](https://pypi.org/) to install **twobitreader** and **biopython**.
