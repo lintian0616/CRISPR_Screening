@@ -11,7 +11,7 @@ This is a tutorial adapted from [Nature Protocol paper](https://www.nature.com/a
 
 ## Install Packages
 
-### pip
+### pip and bioconda (preferred)
 
 We will use [pip](https://pypi.org/) to install **twobitreader** and **biopython**.
 
@@ -29,11 +29,21 @@ If `pip` is installed, upgrade `pip` to the latest version.
 sudo pip install --upgrade pip
 ```
 
-Then, we will use `pip` to install the following packages.
+If `Miniconda2`is not installed, we will install `bioconda` first.
+
+```
+wget https://repo.anaconda.com/miniconda/Miniconda2-latest-Linux-x86_64.sh
+bash Miniconda2-latest-Linux-x86_64.sh
+```
+
+Then, we will use `pip` and `conda`to install the following packages.
 
 ```
 sudo pip install twobitreader
-sudo pip install biopython
+
+## need install Miniconda2 first
+## has to be Miniconda2 NOT Miniconda3
+conda install -c bioconda biopython 
 ```
 
 We also need to install [dryscrape](https://dryscrape.readthedocs.io/en/latest/) package.
@@ -44,7 +54,7 @@ sudo apt-get install qt5-default libqt5webkit5-dev build-essential python-lxml x
 sudo pip install dryscrape
 ```
 
-### install from source (Preferred)
+### install from source
 
 The source files can be found at directory of `source`.
 
@@ -229,11 +239,17 @@ Let's first download [SRA Toolkit](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra
 wget https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/2.10.7/sratoolkit.2.10.7-ubuntu64.tar.gz
 tar -zxvf sratoolkit.2.10.7-ubuntu64.tar.gz
 export PATH=$PATH:/home/lintian0616/sratoolkit.2.10.7-ubuntu64/bin
+
+# alternatively, use conda
+# conda install sra-tools
 ```
 
 ```
 ## Retrieve data
 fastq-dump -I --split-e SRR8297997
+# If the code above not working (because of version)
+# Use:
+# fastq-dump -I --split-3 SRR8297997
 ```
 
 Download spacer sequence file from [Addgene](https://www.addgene.org/pooled-library/broadgpp-human-knockout-brunello/). Only keep the column of spacer sequence. Also delete the column names so that the first row is already spacer sequence.
