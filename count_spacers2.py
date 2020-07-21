@@ -49,7 +49,7 @@ def count_spacers(input_file, fastq_file, output_file, guide_g):
 		read_sequence = str.upper(str(record.seq))
 		key_index = read_sequence.find(KEY)
 		if key_index >= 0:
-			start_index = key_index + len(KEY)
+			start_index = key_index
 			guide = read_sequence[(start_index-20):start_index]
 			if guide in dictionary:
 				dictionary[guide] += 1
