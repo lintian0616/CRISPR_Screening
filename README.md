@@ -261,14 +261,20 @@ Here is the parameters for `count_spacers.py`.
 * `-f`: .fastq file containing NGS data for analysis
 * `-o`: Output .csv file with guide spacer sequences in the first column and respective read counts in the second column
 * `-i`: Input .csv file with guide spacer sequences
-* `-no-g`: Indicates the absence of a guanine before the guide spacer sequence
+* `-no-g`: Indicates the absence of a guanine before the guide spacer sequence (default: G is present)
 
 The priciple of `count_spacers.py` is to find seed `CGAAACACC`, which is at the 3' of the forward primer and is just left to the spacer sequence . The position of seed will be used to determine the position and extract the sequence of **20-nt** spacer.
 
 ![oligo structure](./Examples/count_spacer_diagram.jpg)
 
 ```
-python count_spacers.py -f ~/rstudio/SRR8297997.fastq -o output.csv -i count_spacers_files/broadgpp-brunello-library-contents-human-spacer.csv
+python count_spacers.py -no-g -f ~/rstudio/SRR8297997.fastq -o output.csv -i count_spacers_files/broadgpp-brunello-library-contents-human-spacer.csv
+```
+
+If the fastq file is gzipped, we can use the pipeline.
+
+```
+python count_spacers.py -no-g -f <(zcat ~/rstudio/SRR8297997.fastq.gz) -o output.csv -i count_spacers_files/broadgpp-brunello-library-contents-human-spacer.csv
 ```
 
 There are two outputs:
